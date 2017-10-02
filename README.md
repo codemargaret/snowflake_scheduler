@@ -26,14 +26,27 @@ _This app allows users to create a profile with a group and a group role. Users 
 
 ## Specs
 
-http://www.tablesgenerator.com/markdown_tables
+| Spec                       | Input                                                                                                | Output                          |
+|----------------------------|------------------------------------------------------------------------------------------------------|---------------------------------|
+| Create a group             | One Way Train                                                                                        | Groups: One Way Train           |
+| Create a member            | Margaret                                                                                             | Members: Margaret               |
+| Edit a group               | Margaret -> Maggie                                                                                   | Members: Maggie                 |
+| Edit a member              | One Way Train -> One Way Plane                                                                       | One Way Plane                   |
+| Delete a group             | One Way Plane - > Delete                                                                             | Groups:                         |
+| Delete a member            | Maggie -> Delete                                                                                     | Members:                        |
+| Add a group to a member    | Maggie -> Add group -> One Way Plane                                                                 | Maggie's groups: One Way Plane  |
+| Add a member to a group    | One Way Plane -> Maggie                                                                              | One Way Plane's members: Maggie |
+| Add availability to member | Maggie: Monday, Thursday, Saturday                                                                   | Maggie's availability: M W S    |
+| See group availability     | Maggie's availability: Monday, Wednesday, Saturday  Steve's availability: Tuesday, Wednesday, Friday | Group availability: Wednesday   |
 
-## Setup/Installation Requirements
+## Setup/Installation Requirements`
 
 1. _Clone the repository and open Terminal or a similar program._
 2. _Run bundle in the root file to make sure all necessary gems are installed._
 3. _Run rake db:create._
 4. _Run rake db:migrate._
+
+![Database Architecture](/DatabaseArchitecture.png)
 
 ## Known Bugs
 
@@ -41,12 +54,12 @@ _There are no known bugs at this time._
 
 ## Support and contact details
 
-_If you have any updates or suggestions please contact [Name] & [Name] or make a contribution yourself._
+_If you have any updates or suggestions please contact [Margaret] & [Michael] & [Dan K] & [Dan G] or make a contribution yourself._
 
 [Margaret]: mailto:margaretshelaghmcgovern@gmail.com
-[Michael]: mailto:Name@gmail.com
-[Dan K]: mailto:Name@gmail.com
-[Dan G]: mailto:Name@gmail.com
+[Michael]: mailto:mikealphabravo1982@gmail.com
+[Dan K]: mailto:flowfast47@gmail.com
+[Dan G]: mailto:danny.garcia80@hotmail.com
 
 ### License
 
