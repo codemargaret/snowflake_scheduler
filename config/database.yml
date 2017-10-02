@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: scheduler_db
+test:
+  adapter: postgresql
+  database: scheduler_test_db
