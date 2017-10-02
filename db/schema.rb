@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171002184548) do
+ActiveRecord::Schema.define(version: 20171002204836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20171002184548) do
     t.string "generic"
   end
 
-  create_table "member_availabilities", force: :cascade do |t|
+  create_table "member_avails", force: :cascade do |t|
     t.integer "day_id"
     t.integer "member_id"
   end
