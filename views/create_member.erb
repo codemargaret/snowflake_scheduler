@@ -1,0 +1,26 @@
+<h1>Create Member</h1>
+<form action="/member/create" method="post">
+  <div class='form-group'>
+    <label for="member">Enter a member name:</label>
+    <input class='form-control' type="text" name="member_name" placeholder='Bart Simpson'><br>
+  </div>
+
+  <h4>Add to a group:</h4>
+  <% if @groups.any? %>
+    <div>
+      <% @groups.each do |group| %>
+        <option value="<%= group.id %>">
+          <%= group.name %>
+        </option>
+      <% end %>
+    </div>
+  <% end %><br>
+  <% if @not_saved == true %>
+    <div class="alert alert-danger">
+      <h1>Did Not Save, Member Already Exists</h1>
+    </div>
+  <% end %>
+
+  <button type="submit" class='btn btn-info'>Create!</button><br>
+  <a href='/'>Take me home tonight</a>
+</form>
