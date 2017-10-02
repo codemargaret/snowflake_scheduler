@@ -13,11 +13,16 @@ _This app allows users to create a profile with a group and a group role. Users 
 * _As a user, I want to create a group._
 * _As a user, I want to create a member._
 * _As a user, I want to be able to view all groups and members._
-* _As a user, I want to be able to add members to a group._
+* _As a user, I want to be able to edit a group._
+* _As a user, I want to be able to delete a group._
+* _As a user, I want to be able to edit a member._
+* _As a user, I want to be able to delete a member._
 * _As a user, I want to be able to view all members in a group._
 * _As a user, I want to be able to view a member's group._
 * _As a user, I want to be able to add members to a group._
 * _As a user, I want to be able to add a group to a member._
+* _As a user, I want to be able to add my availability._
+* _As a user, I want to be able to see the group's availability._
 
 ## Specs
 
@@ -25,7 +30,10 @@ http://www.tablesgenerator.com/markdown_tables
 
 ## Setup/Installation Requirements
 
-1. _..._
+1. _Clone the repository and open Terminal or a similar program._
+2. _Run bundle in the root file to make sure all necessary gems are installed._
+3. _Run rake db:create._
+4. _Run rake db:migrate._
 
 ## Known Bugs
 
