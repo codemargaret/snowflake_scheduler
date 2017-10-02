@@ -1,0 +1,36 @@
+
+<h2>GROUPS</h2>
+<div>
+  <% if @groups.any? %>
+    <% @groups.each do |group| %>
+      <div class="row">
+        <div class="col-md-4">
+          <li><a href="/group/<%= group.id %>"><%= group.name %></a></li>
+        </div>
+        <div class="col-md-8">
+           <a href='/group/edit/<%= group.id %>'>edit |</a> <a href='/group/delete/<%= group.id %>'>delete</a>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div><br>
+
+<a href='/group/create'>Create New Group</a><br><br>
+
+<h2>MEMBERS</h2>
+<div>
+  <% if @members.any? %>
+    <% @members.each do |member| %>
+      <div class="row">
+        <div class="col-md-4">
+          <li><a href="/member/<%= member.id %>"><%= member.name %></a></li>
+        </div>
+        <div class="col-md-8">
+           <a href='/member/edit/<%= member.id %>'>edit |</a> <a href='/member/delete/<%= member.id %>'>delete</a>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div><br>
+
+<a href='/member/create'>Create New Member</a><br><br>

@@ -1,23 +1,12 @@
-create_table(:members) do |t|
-  t.column(:name, :string)
-  t.column(:role_id, :int)
-end
 
-create_table(:member_availabilities) do |t|
-  t.column(:day_id, :int)
-  t.column(:member_id, :int)
-end
+require("bundler/setup")
+require("sinatra/activerecord")
+require("pry")
+Bundler.require(:default)
+Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
-create_table(:meetups) do |t|
-  t.column(:generic, :string)
-end
-
-create_table(:groups) do |t|
-  t.column(:name, :string)
-  t.column(:meetup_id)
-end
-
-create_table(:relationships) do |t|
-  t.column(:member_id, :int)
-  t.column(:group_id, :int)
+get('/')do
+  @groups = Group.all
+  @members = Member.all
+  erb(:index)
 end
