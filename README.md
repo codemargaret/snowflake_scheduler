@@ -13,11 +13,16 @@ _This app allows users to create a profile with a group and a group role. Users 
 * _As a user, I want to create a group._
 * _As a user, I want to create a member._
 * _As a user, I want to be able to view all groups and members._
-* _As a user, I want to be able to add members to a group._
+* _As a user, I want to be able to edit a group._
+* _As a user, I want to be able to delete a group._
+* _As a user, I want to be able to edit a member._
+* _As a user, I want to be able to delete a member._
 * _As a user, I want to be able to view all members in a group._
 * _As a user, I want to be able to view a member's group._
 * _As a user, I want to be able to add members to a group._
 * _As a user, I want to be able to add a group to a member._
+* _As a user, I want to be able to add my availability._
+* _As a user, I want to be able to see the group's availability._
 
 ## Specs
 
