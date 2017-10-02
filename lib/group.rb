@@ -1,4 +1,4 @@
 class Group < ActiveRecord::Base
   has_many :relationships
-  belongs_to :meetups
+  belongs_to :meetup
 end
