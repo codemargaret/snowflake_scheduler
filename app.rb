@@ -1,4 +1,3 @@
-
 require("bundler/setup")
 require("sinatra/activerecord")
 require("pry")
