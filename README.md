@@ -30,7 +30,10 @@ http://www.tablesgenerator.com/markdown_tables
 
 ## Setup/Installation Requirements
 
-1. _..._
+1. _Clone the repository and open Terminal or a similar program._
+2. _Run bundle in the root file to make sure all necessary gems are installed._
+3. _Run rake db:create._
+4. _Run rake db:migrate._
 
 ## Known Bugs
 
