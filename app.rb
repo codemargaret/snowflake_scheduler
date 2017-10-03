@@ -43,6 +43,12 @@ patch '/group/edit/:id' do
   redirect "/"
 end
 
+delete '/group/delete/:id' do
+  @group = Group.find(params[:id])
+  @group.delete
+  redirect '/'
+end
+
 #MEMBER##############################
 #Show create member page
 get('/member/create') do
@@ -73,6 +79,12 @@ patch '/member/edit/:id' do
   name =  params['new_member_name']
   @member.update({:name => name})
   redirect "/"
+end
+
+delete '/member/delete/:id' do
+  @member = Member.find(params[:id])
+  @member.delete
+  redirect '/'
 end
 
 
