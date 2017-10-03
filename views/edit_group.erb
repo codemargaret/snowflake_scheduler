@@ -1,0 +1,8 @@
+<h1>Edit Group</h1>
+<form action="/group/edit/<%= @group.id %>" method="post">
+  <div class='form-group'>
+    <input name="_method" type="hidden" value="patch">
+    <label for="new_group_name">Edit a group name:</label>
+    <input class='form-control' type="text" name="new_group_name" placeholder='Groupie McGrouperson'><br>
+  </div>
+  <button type="submit" name="button">Update Group!</button>

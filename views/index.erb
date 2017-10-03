@@ -8,7 +8,11 @@
           <li><a href="/group/<%= group.id %>"><%= group.name %></a></li>
         </div>
         <div class="col-md-8">
-           <a href='/group/edit/<%= group.id %>'>edit |</a> <a href='/group/delete/<%= group.id %>'>delete</a>
+           <a href='/group/edit/<%= group.id %>'>edit |</a>
+           <form action="/group/delete/<%= group.id %>" method="post">
+             <input name="_method" type="hidden" value="delete">
+             <button class="btn btn-outline-danger btn-block" type="submit">Delete Group</button>
+           </form>
         </div>
       </div>
     <% end %>
@@ -26,7 +30,11 @@
           <li><a href="/member/<%= member.id %>"><%= member.name %></a></li>
         </div>
         <div class="col-md-8">
-           <a href='/member/edit/<%= member.id %>'>edit |</a> <a href='/member/delete/<%= member.id %>'>delete</a>
+           <a href='/member/edit/<%= member.id %>'>edit |</a>
+           <form action="/member/delete/<%= member.id %>" method="post">
+             <input name="_method" type="hidden" value="delete">
+             <button class="btn btn-outline-danger btn-block" type="submit">Delete Member</button>
+           </form>
         </div>
       </div>
     <% end %>

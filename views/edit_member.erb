@@ -1,0 +1,8 @@
+<h1>Edit Member</h1>
+<form action="/member/edit/<%= @member.id %>" method="post">
+  <div class='form-member'>
+    <input name="_method" type="hidden" value="patch">
+    <label for="new_member_name">Edit a member name:</label>
+    <input class='form-control' type="text" name="new_member_name" placeholder='Member Name'><br>
+  </div>
+  <button type="submit" name="button">Update Member!</button>
