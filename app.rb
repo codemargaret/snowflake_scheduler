@@ -11,11 +11,13 @@ get('/')do
 end
 
 #GROUP##############################
+#Show create group page
 get('/group/create') do
   @members = Member.all
   erb(:create_group)
 end
 
+#Create a new group
 post('/group/create') do
   member_ids = params['member_ids']
   name = params['group_name']
@@ -28,12 +30,27 @@ post('/group/create') do
   end
 end
 
+#Show edit page
+get('/group/edit/:id') do
+  @group = Group.find(params[:id])
+  erb(:edit_group)
+end
+# Edit group name
+patch '/group/edit/:id' do
+  @group = Group.find(params[:id])
+  name =  params['new_group_name']
+  @group.update({:name => name})
+  redirect "/"
+end
+
 #MEMBER##############################
+#Show create member page
 get('/member/create') do
   @groups = Group.all
   erb(:create_member)
 end
 
+#Create a new member
 post('/member/create') do
   group_ids = params['group_ids']
   name = params['member_name']
@@ -46,7 +63,17 @@ post('/member/create') do
   end
 end
 
+get('/member/edit/:id') do
+  @member = Member.find(params[:id])
+  erb(:edit_member)
+end
 
+patch '/member/edit/:id' do
+  @member = Member.find(params[:id])
+  name =  params['new_member_name']
+  @member.update({:name => name})
+  redirect "/"
+end
 
 
 
