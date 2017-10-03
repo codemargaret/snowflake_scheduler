@@ -18,43 +18,6 @@ describe(MemberAvail) do
     member_avails_row3 = MemberAvail.create(:day_id => wednesday_day.id, :member_id => member2.id)
     member_avails_row4 = MemberAvail.create(:day_id => friday_day.id, :member_id => member2.id)
 
-    how_many_people_to_check = Member.all.length
-    array_of_member_id = []
-    x=0
-    while x < how_many_people_to_check
-      member_id_gotten = Member.all[x].id
-      x=x+1
-      array_of_member_id.push(member_id_gotten)
-
-    end
-
-
-
-# fd
-
-    days_available = MemberAvail.where(day_id: wednesday_day.id)
-    # loop through all days
-    days_available[0].member_id
-    # => 1
-    days_available[1].member_id
-    # => 2
-    # Member.find(1).name
-    # # => "steve"
-    # Member.find(2).name
-    # => "mike"
-# fd
-
-
-
-
-
-
-    days_available = MemberAvail.where(member_id: member1.id)
-
-    days_available2 = MemberAvail.where(member_id: member1.id, day_id: monday_day.id)
-
-    days_available4 = MemberAvail.where(day_id: wednesday_day.id)
-
     available_day1 = MemberAvail.where(day_id: monday_day.id)
     available_day2 = MemberAvail.where(day_id: tuesday_day.id)
     available_day3 = MemberAvail.where(day_id: wednesday_day.id)
@@ -63,7 +26,6 @@ describe(MemberAvail) do
     available_day6 = MemberAvail.where(day_id: saturday_day.id)
     available_day7 = MemberAvail.where(day_id: sunday_day.id)
 
-    available_day1.length
 
     array_of_member_names1 = []
     x=0
@@ -92,20 +54,42 @@ describe(MemberAvail) do
       array_of_member_names3.push(name_of_person)
     end
 
-    array2=[]
-    array_of_member_id.each() do |single|
-      days_available = MemberAvail.where(member_id: single)
-      array2.push(days_available )
+    array_of_member_names4 = []
+    x=0
+    while x < available_day4.length
+      member_id_gotten = available_day4[x].member_id
+      name_of_person = Member.find(member_id_gotten).name
+      x=x+1
+      array_of_member_names4.push(name_of_person)
     end
-    binding.pry
 
+    array_of_member_names5 = []
+    x=0
+    while x < available_day5.length
+      member_id_gotten = available_day5[x].member_id
+      name_of_person = Member.find(member_id_gotten).name
+      x=x+1
+      array_of_member_names5.push(name_of_person)
+    end
+
+    array_of_member_names6 = []
+    x=0
+    while x < available_day6.length
+      member_id_gotten = available_day6[x].member_id
+      name_of_person = Member.find(member_id_gotten).name
+      x=x+1
+      array_of_member_names6.push(name_of_person)
+    end
+
+    array_of_member_names7 = []
+    x=0
+    while x < available_day7.length
+      member_id_gotten = available_day7[x].member_id
+      name_of_person = Member.find(member_id_gotten).name
+      x=x+1
+      array_of_member_names7.push(name_of_person)
+    end
+
+    expect(array_of_member_names3).to(eq(["steve", "mike"]))
   end
 end
-
-#
-# describe (Shoe) do
-#   it 'validates presence of shoe brand, criteria 9' do
-#     shoe = Shoe.create(:brand => '', :price => 30)
-#     expect(shoe.save()).to(eq(false))
-#   end
-# end
