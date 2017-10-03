@@ -35,6 +35,7 @@ get('/group/edit/:id') do
   @group = Group.find(params[:id])
   erb(:edit_group)
 end
+
 # Edit group name
 patch '/group/edit/:id' do
   @group = Group.find(params[:id])
@@ -43,10 +44,18 @@ patch '/group/edit/:id' do
   redirect "/"
 end
 
+#Delete group
 delete '/group/delete/:id' do
   @group = Group.find(params[:id])
   @group.delete
   redirect '/'
+end
+
+#Show individual group page
+get '/group/:id' do
+  @group = Group.find(params[:id])
+  @members = @group.members
+  erb :group
 end
 
 #MEMBER##############################
@@ -58,9 +67,9 @@ end
 
 #Create a new member
 post('/member/create') do
-  group_ids = params['group_ids']
+  group_id = params['group_id']
   name = params['member_name']
-  if Member.create({:group_ids => group_ids, :name => name})
+  if Member.create({:group_ids => group_id, :name => name})
     redirect('/')
   else
     @not_saved = true
@@ -69,11 +78,13 @@ post('/member/create') do
   end
 end
 
+#Show the member edit page
 get('/member/edit/:id') do
   @member = Member.find(params[:id])
   erb(:edit_member)
 end
 
+#Edit a member
 patch '/member/edit/:id' do
   @member = Member.find(params[:id])
   name =  params['new_member_name']
@@ -81,10 +92,17 @@ patch '/member/edit/:id' do
   redirect "/"
 end
 
+#Delete a member
 delete '/member/delete/:id' do
   @member = Member.find(params[:id])
   @member.delete
   redirect '/'
+end
+#Show individual member page
+get '/member/:id' do
+  @member = Member.find(params[:id])
+  @groups = @member.groups
+  erb :member
 end
 
 
