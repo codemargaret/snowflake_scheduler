@@ -1,0 +1,37 @@
+<h1><%= @member.name %> </h1>
+
+<ul>
+  <% @groups.each do |group| %>
+  <li><%= group.name %></a></li>
+  <% end %>
+</ul>
+
+
+<h4>Select availability for this member:</h4>
+<form>
+  <div>
+    <div class="checkbox">
+      <label><input type='checkbox' name='Monday' value=1>Monday</label>
+    </div>
+    <div class="checkbox">
+      <label><input type='checkbox' name='Tuesday' value=2>Tuesday</label>
+    </div>
+    <div class="checkbox">
+      <label><input type='checkbox' name='Wednesday' value=3>Wednesday</label>
+    </div>
+    <div class="checkbox">
+      <label><input type='checkbox' name='Thursday' value=4>Thursday</label>
+    </div>
+    <div class="checkbox">
+      <label><input type='checkbox' name='Friday' value=5>Friday</label>
+    </div>
+    <div class="checkbox">
+      <label><input type='checkbox' name='Saturday' value=6>Saturday</label>
+    </div>
+    <div class="checkbox">
+      <label><input type='checkbox' name='Sunday' value=7>Sunday</label>
+    </div>
+
+    <button type="submit" class='btn btn-info'>Submit availability</button>
+  </div>
+</form>
