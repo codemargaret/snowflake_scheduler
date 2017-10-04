@@ -10,7 +10,7 @@ end
     'Wednesday',
     'Thursday',
     'Friday',
-    'Saturday'
+    'Saturday',
     'Sunday'
   ]
 
