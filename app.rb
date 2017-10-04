@@ -21,7 +21,7 @@ end
 post('/group/create') do
   member_ids = params['member_ids']
   name = params['group_name']
-  if Group.create({:meetup_id => member_ids, :name => name})
+  if Group.create({:member_ids => member_ids, :name => name})
     redirect('/')
   else
     @not_saved = true
@@ -30,7 +30,7 @@ post('/group/create') do
   end
 end
 
-#Show edit page
+#Show the group edit page
 get('/group/edit/:id') do
   @group = Group.find(params[:id])
   @members = Member.all
@@ -41,17 +41,12 @@ end
 patch '/group/edit/:id' do
   @group = Group.find(params[:id])
   name =  params['new_group_name']
-  @group.update({:name => name})
+  member_ids = params['member_ids']
+  @group.update({:name => name, :member_ids => member_ids})
   redirect "/"
 end
 
-#Delete group
-# delete '/group/delete/:id' do
-#   @group = Group.find(params[:id])
-#   @group.delete
-#   redirect '/'
-# end
-
+#Delete a group
 get('/group/delete/:id') do
   Group.find(params['id']).destroy
   redirect('/')
@@ -95,7 +90,8 @@ end
 patch '/member/edit/:id' do
   @member = Member.find(params[:id])
   name =  params['new_member_name']
-  @member.update({:name => name})
+  group_ids = params['group_ids']
+  @member.update({:name => name, :group_ids => group_ids})
   redirect "/"
 end
 

@@ -1,4 +1,23 @@
 <h1><%= @group.name %> </h1>
 
+<h4>These are members of <%= @group.name %></h4>
+<div>
+  <% if @group.members.any? %>
+  <ul>
+    <% @group.members.each do |member| %>
+      <li><%= member.name %></li>
+    <% end %>
+  </ul>
+  <% else %>
+    <p>There are currently no members in this group</p>
+  <% end %>
+</div>
+
+
+<p>Member availability:</p>
+
 <!-- # Monday: members available (show list of names)
 # etc. -->
+
+<br>
+<a href='/'>Take me home tonight</a>
