@@ -5,4 +5,24 @@
     <label for="new_group_name">Edit a group name:</label>
     <input class='form-control' type="text" name="new_group_name" placeholder='Groupie McGrouperson'><br>
   </div>
+  <h4>Select members for this group:</h4>
+  <% if @members.any? %>
+    <div>
+      <% @members.each do |member| %>
+        <div class='checkbox'>
+          <label>
+            <input type='checkbox' name='member_ids[]' value='<%= member.id %>'> <%= member.name %>
+          </label>
+        </div>
+      <% end %>
+    </div>
+  <% end %><br>
+  <% if @not_saved == true %>
+    <div class="alert alert-danger">
+      <h1>Did Not Save, Group Already Exists</h1>
+    </div>
+  <% end %>
   <button type="submit" name="button">Update Group!</button>
+  <br>
+  <a href='/'>Take me home</a>
+</form>
