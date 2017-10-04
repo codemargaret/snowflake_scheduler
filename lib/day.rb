@@ -2,6 +2,7 @@ class Day <ActiveRecord::Base
   has_many :member_avails
   has_many :members, through: :member_avails
 
+
   # monday_day1 = Day.create(:name => 'Monday')
   # monday_day = Day.find_by(name: 'Monday')
   # member1 = Member.create(:name => 'steve', :role_id => nil)
@@ -24,6 +25,7 @@ class Day <ActiveRecord::Base
   #   end
   #   mon_people
   # end
+
 
 end
 
