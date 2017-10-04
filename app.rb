@@ -115,13 +115,18 @@ get '/member/:id' do
   erb(:member)
 end
 
-#   day_ids = params['day_ids'] # Goes in post to gather selected boxs
-#   day_ids.each do |day_id|
-#     member.groups.push(Day.find(day_id))
-#   end
-#       # row_in_member_avails = MemberAvail.create(:day_id => @days.id, :member_id => @member.id)
-#   erb :member
-# end
+post '/member/:id' do
+  member = Member.find(params[:id])
+
+
+
+  day_ids = params['day_ids'] # Goes in post to gather selected boxs
+  day_ids.each do |day_id|
+    member.days.push(Day.find(day_id))
+  end
+      # row_in_member_avails = MemberAvail.create(:day_id => @days.id, :member_id => @member.id)
+  redirect "/member/#{member.id}"
+end
 
 
 
