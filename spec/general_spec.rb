@@ -1,7 +1,53 @@
 require('spec_helper')
 
+describe(Day) do
+  # it 'checks member availibility by day' do
+  #   monday_day1 = Day.create(:name => 'Monday')
+  #   monday_day = Day.find_by(name: 'Monday')
+  #   member1 = Member.create(:name => 'steve', :role_id => nil)
+  #   member2 = Member.create(:name => 'mike', :role_id => nil)
+  #   member_avails_row1 = MemberAvail.create(:day_id => monday_day.id, :member_id => member1.id)
+  #   member_avails_row2 = MemberAvail.create(:day_id => monday_day.id, :member_id => member2.id)
+  #   # binding.pry
+  #   expect(MemberAvail.find_mon_avail).to(eq(["steve", "mike"]))
+  # end
+
+  it 'checks member availibility by day' do
+    monday_day1 = Day.create(:name => 'Monday')
+    monday_day = Day.find_by(name: 'Monday')
+    member1 = Member.create(:name => 'steve', :role_id => nil)
+    member2 = Member.create(:name => 'mike', :role_id => nil)
+    member_avails_row1 = MemberAvail.create(:day_id => monday_day.id, :member_id => member1.id)
+    member_avails_row2 = MemberAvail.create(:day_id => monday_day.id, :member_id => member2.id)
+    # binding.pry
+    expect(MemberAvail.find_avail('Monday')).to(eq(["steve", "mike"]))
+  end
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 describe(MemberAvail) do
-  it 'checkes member availibility by day' do
+  it 'checks member availibility by day' do
     member1 = Member.create(:name => 'steve', :role_id => nil)
     member1_id = member1.id
     member2 = Member.create(:name => 'mike', :role_id => nil)
@@ -26,7 +72,7 @@ describe(MemberAvail) do
     available_day6 = MemberAvail.where(day_id: saturday_day.id)
     available_day7 = MemberAvail.where(day_id: sunday_day.id)
 
-
+def day1_peoples
     array_of_member_names1 = []
     x=0
     while x < available_day1.length
@@ -35,6 +81,8 @@ describe(MemberAvail) do
       x=x+1
       array_of_member_names1.push(name_of_person)
     end
+
+end
 
     array_of_member_names2 = []
     x=0
@@ -89,6 +137,7 @@ describe(MemberAvail) do
       x=x+1
       array_of_member_names7.push(name_of_person)
     end
+    # binding.pry
 
     expect(array_of_member_names3).to(eq(["steve", "mike"]))
   end
