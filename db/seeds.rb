@@ -4,6 +4,8 @@ class Day <ActiveRecord::Base
 
 end
 
+Day.destroy_all
+
   days = [
     'Monday',
     'Tuesday',

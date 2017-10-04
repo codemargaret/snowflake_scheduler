@@ -17,7 +17,7 @@
   <div>
   <% @days.each do |day| %>
     <div class="checkbox">
-      <label><input type='checkbox' name='day_ids[]' value="<%= day.id() %>"><%= day.name %></label>
+      <label><input type='checkbox' name='day_ids[]' value="<%= day.id() %>"> <%= day.name %></label>
     </div>
   <% end %>
 

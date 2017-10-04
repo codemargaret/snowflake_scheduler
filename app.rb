@@ -4,6 +4,12 @@ require("pry")
 Bundler.require(:default)
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
+# RSpec.configure do |config|
+#   config.after(:each) do
+#     Day.all.each do |day|
+#       day.destroy
+#     end
+
 get('/')do
   @groups = Group.all
   @members = Member.all
