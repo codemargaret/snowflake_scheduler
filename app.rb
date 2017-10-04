@@ -104,6 +104,8 @@ end
 #Show individual member page
 get '/member/:id' do
   @member = Member.find(params[:id])
+  @days = Day.all
+  day_ids = params['day_ids'] # Goes in post to gather selected boxs
   @groups = @member.groups
   erb :member
 end
