@@ -33,6 +33,7 @@ end
 #Show edit page
 get('/group/edit/:id') do
   @group = Group.find(params[:id])
+  @members = Member.all
   erb(:edit_group)
 end
 
@@ -45,10 +46,15 @@ patch '/group/edit/:id' do
 end
 
 #Delete group
-delete '/group/delete/:id' do
-  @group = Group.find(params[:id])
-  @group.delete
-  redirect '/'
+# delete '/group/delete/:id' do
+#   @group = Group.find(params[:id])
+#   @group.delete
+#   redirect '/'
+# end
+
+get('/group/delete/:id') do
+  Group.find(params['id']).destroy
+  redirect('/')
 end
 
 #Show individual group page
@@ -80,6 +86,7 @@ end
 
 #Show the member edit page
 get('/member/edit/:id') do
+  @groups = Group.all
   @member = Member.find(params[:id])
   erb(:edit_member)
 end
@@ -93,11 +100,11 @@ patch '/member/edit/:id' do
 end
 
 #Delete a member
-delete '/member/delete/:id' do
-  @member = Member.find(params[:id])
-  @member.delete
-  redirect '/'
+get('/member/delete/:id') do
+  Member.find(params['id']).destroy
+  redirect('/')
 end
+
 #Show individual member page
 get '/member/:id' do
   @member = Member.find(params[:id])
