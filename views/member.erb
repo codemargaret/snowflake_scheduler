@@ -6,6 +6,18 @@
   <% end %>
 </ul>
 
+<h4>These are days <%= @member.name %> is available:</h4>
+<div>
+  <% if @member.days.any? %>
+  <ul>
+    <% @member.days.each do |day| %>
+      <li><%= day.name %></li>
+    <% end %>
+  </ul>
+  <% else %>
+    <p>You currently have no days selected, select them below!</p>
+  <% end %>
+</div>
 
 <h4>Select availability for this member:</h4>
 <form action"/create_avail/<%= @member.id %>" method="post">
