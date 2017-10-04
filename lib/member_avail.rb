@@ -11,10 +11,8 @@ class MemberAvail <ActiveRecord::Base
 
   def self.find_mon_avail
     monday_day = Day.find_by(name: 'Monday')
-
     monday_day_id = monday_day.id
     mon_avail = MemberAvail.where(day_id: monday_day_id)
-
     mon_people =[]
     x=0
     while x < mon_avail.length
