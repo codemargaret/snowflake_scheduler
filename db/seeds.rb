@@ -4,13 +4,15 @@ class Day <ActiveRecord::Base
 
 end
 
+Day.destroy_all
+
   days = [
     'Monday',
     'Tuesday',
     'Wednesday',
     'Thursday',
     'Friday',
-    'Saturday'
+    'Saturday',
     'Sunday'
   ]
 

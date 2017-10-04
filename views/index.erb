@@ -9,10 +9,7 @@
         </div>
         <div class="col-md-8">
            <a href='/group/edit/<%= group.id %>'>edit |</a>
-           <form action="/group/delete/<%= group.id %>" method="post">
-             <input name="_method" type="hidden" value="delete">
-             <button class="btn btn-outline-danger btn-block" type="submit">Delete Group</button>
-           </form>
+           <a href='/group/delete/<%= group.id %>'>delete</a>
         </div>
       </div>
     <% end %>
@@ -31,10 +28,7 @@
         </div>
         <div class="col-md-8">
            <a href='/member/edit/<%= member.id %>'>edit |</a>
-           <form action="/member/delete/<%= member.id %>" method="post">
-             <input name="_method" type="hidden" value="delete">
-             <button class="btn btn-outline-danger btn-block" type="submit">Delete Member</button>
-           </form>
+           <a href='/member/delete/<%= member.id %>'> delete</a>
         </div>
       </div>
     <% end %>

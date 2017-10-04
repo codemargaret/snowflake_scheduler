@@ -3,6 +3,27 @@
   <div class='form-member'>
     <input name="_method" type="hidden" value="patch">
     <label for="new_member_name">Edit a member name:</label>
-    <input class='form-control' type="text" name="new_member_name" placeholder='Member Name'><br>
+    <input class='form-control' type="text" name="new_member_name" placeholder='Bart Simpson'><br>
   </div>
-  <button type="submit" name="button">Update Member!</button>
+  <h4>Add to a group:</h4>
+  <select class="custom-select" name="group_id" style="width: 100%;">
+  <% if @groups.any? %>
+    <div>
+      <% @groups.each do |group| %>
+        <option value="<%= group.id %>">
+          <%= group.name %>
+        </option>
+      <% end %>
+    </div>
+  </select>
+  <% end %><br>
+  <% if @not_saved == true %>
+    <div class="alert alert-danger">
+      <h1>Did Not Save, Member Already Exists</h1>
+    </div>
+  <% end %>
+  <br>
+  <button type="submit" class='btn btn-info' name="button">Update Member!</button>
+  <br><br>
+  <a href='/'>Take me home tonight</a>
+</form>

@@ -2,13 +2,13 @@ class Day <ActiveRecord::Base
   has_many :member_avails
   has_many :members, through: :member_avails
 
-  monday_day = Day.create(:name => 'Monday')
-  tuesday_day = Day.create(:name => 'Tuesday')
-  wednesday_day = Day.create(:name => 'Wednesday')
-  thursday_day = Day.create(:name => 'Thursday')
-  friday_day = Day.create(:name => 'Friday')
-  saturday_day = Day.create(:name => 'Saturday')
-  sunday_day = Day.create(:name => 'Sunday')
+  # monday_day = Day.create(:name => 'Monday')
+  # tuesday_day = Day.create(:name => 'Tuesday')
+  # wednesday_day = Day.create(:name => 'Wednesday')
+  # thursday_day = Day.create(:name => 'Thursday')
+  # friday_day = Day.create(:name => 'Friday')
+  # saturday_day = Day.create(:name => 'Saturday')
+  # sunday_day = Day.create(:name => 'Sunday')
 
 end
 
