@@ -54,23 +54,13 @@ end
 
 #Show individual group page
 get '/group/:id' do
-  @day = Day.find(params[:id])
   @group = Group.find(params[:id])
-  @members = @group.members
-  # @days = @members.days
-  @avails = MemberAvail.all
+  members = @group.members
 
-  days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
   @hash = {}
-  days.each do |d|
-    @hash[d] = MemberAvail.find_avail(d)
+  Day.all.each do |day|
+    @hash[day.name] = MemberAvail.find_group_mem_for_day(day, members)
   end
-
-  # day = Day.find(params[:day_id])
-  # member_ids = params['member_ids']
-  # member_ids.each do |member_id|
-  #   day.members.push(Day.find(day_id))
-  # end
   erb :group
 end
 
