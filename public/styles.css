@@ -27,3 +27,15 @@
   50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
   100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
 }
+
+.navbar {
+  color: #80c8ff;
+}
+
+body {
+  color: #80c8ff;
+}
+
+a {
+  color: #80c8ff;
+}
