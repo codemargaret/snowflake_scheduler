@@ -39,7 +39,7 @@ _This app allows users to create a profile with a group and a group role. Users 
 | Add availability to member | Maggie: Monday, Thursday, Saturday                                                                   | Maggie's availability: M W S    |
 | See group availability     | Maggie's availability: Monday, Wednesday, Saturday  Steve's availability: Tuesday, Wednesday, Friday | Group availability: Wednesday   |
 
-## Setup/Installation Requirements`
+## Setup/Installation Requirements
 
 1. _Clone the repository and open Terminal or a similar program._
 2. _Run bundle in the root file to make sure all necessary gems are installed._
