@@ -16,9 +16,14 @@
 
 <p>Member availability:</p>
 
-<% @hash.each do |day_of_week, available_members| %>
-  <p><%= day_of_week %>: <%= available_members.join(', ') %>
+<% if @group.members.any? %>
+  <% @hash.each do |day_of_week, available_members| %>
+    <p><%= day_of_week %>: <%= available_members.join(', ') %>
+  <% end %>
+<% else %>
+  <p>No members have signed up for a day.</p>
 <% end %>
 
+<br>
 <br>
 <a href='/'>Take me home tonight</a>
