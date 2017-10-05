@@ -55,7 +55,7 @@ end
 
 #Show individual group page
 get '/group/:id' do
-  @day = Day.find(params[:id])
+  # @day = Day.find(params[:id])
   @group = Group.find(params[:id])
   @members = @group.members
   days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
