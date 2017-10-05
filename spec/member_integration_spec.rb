@@ -28,7 +28,7 @@ describe 'the member delete path', {:type => :feature} do
   it 'allows a user to delete a member' do
     member = Member.create({:name => 'Dan'})
     visit '/'
-    click_button('Delete Member')
+    click_link('delete')
     expect(page).not_to have_content("Dan")
   end
 end

@@ -16,9 +16,9 @@
 
 <p>Member availability:</p>
 
-
-<!-- # Monday: members available (show list of names)
-# etc. -->
+<% @hash.each do |day_of_week, available_members| %>
+  <p><%= day_of_week %>: <%= available_members.join(', ') %>
+<% end %>
 
 <br>
 <a href='/'>Take me home tonight</a>

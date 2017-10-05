@@ -28,7 +28,7 @@ describe 'the group delete path', {:type => :feature} do
   it 'allows a user to delete a group' do
     group = Group.create({:name => 'One Way Train'})
     visit '/'
-    click_button('Delete Group')
+    click_link('delete')
     expect(page).not_to have_content("One Way Train")
   end
 end

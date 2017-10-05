@@ -4,12 +4,7 @@ require("pry")
 Bundler.require(:default)
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
-# RSpec.configure do |config|
-#   config.after(:each) do
-#     Day.all.each do |day|
-#       day.destroy
-#     end
-
+#Show home page
 get('/')do
   @groups = Group.all
   @members = Member.all
@@ -60,8 +55,14 @@ end
 
 #Show individual group page
 get '/group/:id' do
+  @day = Day.find(params[:id])
   @group = Group.find(params[:id])
   @members = @group.members
+  days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  @hash = {}
+  days.each do |d|
+    @hash[d] = MemberAvail.find_avail(d)
+  end
   erb :group
 end
 
@@ -111,11 +112,18 @@ end
 get '/member/:id' do
   @member = Member.find(params[:id])
   @days = Day.all
-  day_ids = params['day_ids'] # Goes in post to gather selected boxs
   @groups = @member.groups
-  erb :member
+  erb(:member)
 end
 
-
+#Add member availability
+post '/member/:id' do
+  member = Member.find(params[:id])
+  day_ids = params['day_ids']
+  day_ids.each do |day_id|
+    member.days.push(Day.find(day_id))
+  end
+  redirect "/member/#{member.id}"
+end
 
 #OTHER##############################

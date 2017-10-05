@@ -1,30 +1,36 @@
 <h1><%= @member.name %> </h1>
-<h4>this member is apart of:</h4>
+
+<ul>
+  <% @groups.each do |group| %>
+  <li><%= group.name %></a></li>
+  <% end %>
+</ul>
+
+<h4>These are days <%= @member.name %> is available:</h4>
 <div>
-  <% if @member.groups.any? %>
-    <ul>
-      <% @member.groups.each do |group| %>
-        <li><%= group.name %></li>
-      <% end %>
-    </ul>
-    <% else %>
-    <p>No Group</p>
+  <% if @member.days.any? %>
+  <ul>
+    <% @member.days.each do |day| %>
+      <li><%= day.name %></li>
+    <% end %>
+  </ul>
+  <% else %>
+    <p>You currently have no days selected, select them below!</p>
   <% end %>
 </div>
 
 <h4>Select availability for this member:</h4>
-<form>
-  <div>
-  <% @days.each do |day| %>
-    <div class="checkbox">
-      <label><input type='checkbox' name='day_ids[]' value="<%= day.id() %>"> <%= day.name %></label>
-    </div>
-  <% end %>
-
-
+<form action"/create_avail/<%= @member.id %>" method="post">
+    <% @days.each do |day| %>
+    <div>
+      <div class="checkbox">
+        <label>
+          <input type='checkbox' name='day_ids[]' value='<%= day.id %>'> <%= day.name %>
+        </label>
+      </div>
+    <% end %>
     <button type="submit" class='btn btn-info'>Submit availability</button>
   </div>
 </form>
 
-<br>
 <a href='/'>Take me home tonight</a>

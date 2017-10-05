@@ -52,6 +52,10 @@ _This app allows users to create a profile with a group and a group role. Users 
 
 _There are no known bugs at this time._
 
+## Thanks to...
+
+_Nicky Christensen for the [snow animation](https://codepen.io/NickyCDK/pen/AIonk)_
+
 ## Support and contact details
 
 _If you have any updates or suggestions please contact [Margaret] & [Michael] & [Dan K] & [Dan G] or make a contribution yourself._
