@@ -15,6 +15,32 @@ class MemberAvail <ActiveRecord::Base
     end
     people
   end
-
-
 end
+
+
+
+
+
+# app.rb
+# days = ["Sunday", "Monday", "Tuesday"]
+# @hash = {}
+# days.each do |d|
+#   @hash[d] = MemberAvail.find_avail(d)
+# end
+
+# view
+# @hash["Monday"]
+# @hash["Tuesday"]
+
+
+# @hash = {
+#   "Sunday" => all members returned for Sunday,
+#   "Monday" => members returned for Monday
+#
+# }
+
+
+#
+# @hash["Monday"].each do |member|
+#   stuff about member
+# end
