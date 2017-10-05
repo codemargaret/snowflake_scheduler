@@ -32,3 +32,15 @@ describe 'the member delete path', {:type => :feature} do
     expect(page).not_to have_content("Dan")
   end
 end
+# 
+# describe 'adding a group to a member', {:type => :feature} do
+#   it 'allows a user add a group to a member' do
+#     member = Member.create({:name => 'Dan'})
+#     group = Group.create({:name => 'One Way Train'})
+#     visit '/'
+#     click_link('edit')
+#     fill_in('new_member_name', :with => 'Dan')
+#     select('One Way Train', :from => "group_id")
+#     expect(page).not_to have_content("Dan")
+#   end
+# end
