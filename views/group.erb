@@ -15,29 +15,10 @@
 
 
 <p>Member availability:</p>
-<!-- <div>
-  <ul>
-    <% @member.days.each do |day| %>
-      <li><%= day.name %></li>
-    <% end %>
-  </ul>
-</div> -->
-<%= @hash["Sunday"] %>
-<%= @hash["Monday"] %>
-<%= @hash["Tuesday"] %>
-<%= @hash["Wednesday"] %>
-<%= @hash["Thurday"] %>
-<%= @hash["Friday"] %>
-<%= @hash["Saturday"] %>
 
-<!--
-<p><%= @monday %> :</p>
-<p>day.name</p>
-<p>day.name</p>
-<p>day.name</p>
-<p>day.name</p>
-<p>Sunday :</p> -->
-
+<% @hash.each do |day_of_week, available_members| %>
+  <p><%= day_of_week %>: <%= available_members.join(', ') %>
+<% end %>
 
 <br>
 <a href='/'>Take me home tonight</a>

@@ -4,16 +4,18 @@ class MemberAvail <ActiveRecord::Base
 
   def self.find_avail(day)
     found_day = Day.find_by(name: day)
-    avail = MemberAvail.where(day_id: found_day.id)
-    people =[]
-    x=0
-    while x < avail.length
-      member_id_gotten = avail[x].member_id
-      name_of_person = Member.find(member_id_gotten).name
-      x=x+1
-      people.push(name_of_person)
+    MemberAvail.where(day_id: found_day.id).map do |availability|
+      Member.find(availability.member_id).name
     end
-    people
+    # people =[]
+    # x=0
+    # while x < avail.length
+    #   member_id_gotten = avail[x].member_id
+    #   name_of_person = Member.find(member_id_gotten).name
+    #   x=x+1
+    #   people.push(name_of_person)
+    # end
+    # people
   end
 end
 
