@@ -4,6 +4,7 @@ require("pry")
 Bundler.require(:default)
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
+#Show home page
 get('/')do
   @groups = Group.all
   @members = Member.all
@@ -57,20 +58,11 @@ get '/group/:id' do
   @day = Day.find(params[:id])
   @group = Group.find(params[:id])
   @members = @group.members
-  # @days = @members.days
-  @avails = MemberAvail.all
-
   days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
   @hash = {}
   days.each do |d|
     @hash[d] = MemberAvail.find_avail(d)
   end
-
-  # day = Day.find(params[:day_id])
-  # member_ids = params['member_ids']
-  # member_ids.each do |member_id|
-  #   day.members.push(Day.find(day_id))
-  # end
   erb :group
 end
 
@@ -124,6 +116,7 @@ get '/member/:id' do
   erb(:member)
 end
 
+#Add member availability
 post '/member/:id' do
   member = Member.find(params[:id])
   day_ids = params['day_ids']
@@ -132,7 +125,5 @@ post '/member/:id' do
   end
   redirect "/member/#{member.id}"
 end
-
-
 
 #OTHER##############################
