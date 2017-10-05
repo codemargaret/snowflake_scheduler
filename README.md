@@ -30,8 +30,8 @@ _This app allows users to create a profile with a group and a group role. Users 
 |----------------------------|------------------------------------------------------------------------------------------------------|---------------------------------|
 | Create a group             | One Way Train                                                                                        | Groups: One Way Train           |
 | Create a member            | Margaret                                                                                             | Members: Margaret               |
-| Edit a group               | Margaret -> Maggie                                                                                   | Members: Maggie                 |
-| Edit a member              | One Way Train -> One Way Plane                                                                       | One Way Plane                   |
+| Edit a group               | One Way Train -> One Way Plane                                                                                    | Members: Maggie                 |
+| Edit a member              | Margaret -> Maggie                                                                        | One Way Plane                   |
 | Delete a group             | One Way Plane - > Delete                                                                             | Groups:                         |
 | Delete a member            | Maggie -> Delete                                                                                     | Members:                        |
 | Add a group to a member    | Maggie -> Add group -> One Way Plane                                                                 | Maggie's groups: One Way Plane  |
@@ -46,11 +46,12 @@ _This app allows users to create a profile with a group and a group role. Users 
 3. _Run rake db:create._
 4. _Run rake db:migrate._
 
-![Database Architecture](/DatabaseArchitecture.png)
+![Database Architecture](https://github.com/margaret85/snowflake_scheduler/blob/master/public/DatabaseArchitecture.png)
 
 ## Known Bugs
 
-_There are no known bugs at this time._
+_The create button on the create member and edit member pages is not visible when no group has been created._
+_On the group page, the member availability for all groups is visible._
 
 ## Thanks to...
 
