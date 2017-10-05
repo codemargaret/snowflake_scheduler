@@ -4,4 +4,5 @@ class Member <ActiveRecord::Base
   belongs_to :role
   has_many :groups, through: :relationships
   has_many :days, through: :member_avails
+  validates(:name, :presence => true)
 end
