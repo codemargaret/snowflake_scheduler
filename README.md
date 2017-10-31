@@ -41,10 +41,41 @@ _This app allows users to create a profile with a group and a group role. Users 
 
 ## Setup/Installation Requirements
 
-1. _Clone the repository and open Terminal or a similar program._
-2. _Run bundle in the root file to make sure all necessary gems are installed._
-3. _Run rake db:create._
-4. _Run rake db:migrate._
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+Open terminal on your computer,
+Navigate to the folder you would like to clone the project into:
+```
+cd desktop
+```
+and run:
+
+```
+git clone https://github.com/margaret85/snowflake_scheduler
+```
+Navigate into project folder with:
+```
+cd snowflake_scheduler
+```
+Run:
+```
+bundle
+```
+```
+rake db:create
+```
+```
+rake db:migrate
+```
+If you have Atom installed and want to see the project structure run:
+```
+atom .
+```
+Otherwise...
+```
+ruby app.rb
+```
+Nativate in your browser to http://localhost:4567/
 
 ![Database Architecture](https://github.com/margaret85/snowflake_scheduler/blob/master/public/DatabaseArchitecture.png)
 
@@ -52,6 +83,13 @@ _This app allows users to create a profile with a group and a group role. Users 
 
 _The create button on the create member and edit member pages is not visible when no group has been created._
 _On the group page, the member availability for all groups is visible._
+
+## Future Features
+
+* Build in a function to show available day by highest count
+* Build a user account system (user profile)
+* Integrate a database server
+* Allow different roles for users and schedule built to handle these roles
 
 ## Thanks to...
 
